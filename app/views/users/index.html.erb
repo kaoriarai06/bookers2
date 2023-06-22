@@ -1,0 +1,32 @@
+<h1>users/indexページ</h1>
+
+<h1>User info</h1>
+  <p>自分の画像</p>
+  <p>自分の名前</p>
+  <p>自己紹介</p>
+  
+<h1>New book</h1>
+<%= form_with model: @book do |f| %>
+    
+    <h4>title</h4>
+      <%= f.text_field :title %>
+    
+    <h4>opinion</h4>
+      <%= f.text_area :body %>
+      
+    <%= f.submit 'Create Book' %>
+  
+  <% end %>
+  
+<h1>Users</h1>
+<% @users.each do |user| %>
+  <p>image</p>
+  <p>userの画像表示</p>
+  
+  <p>name</p>
+  <span><%= user.name %></span>
+  
+  <p>showリンク</p>
+
+<% end %>
+  

@@ -1,2 +1,44 @@
 <h1>Books#show</h1>
 <p>Find me in app/views/books/show.html.erb</p>
+
+<h1>User info</h1>
+  <%= form_with model: @user do |f| %>
+    <h4>name</h4>
+    <%= f.text_field :name %>
+    
+    <h4>introduction</h4>
+    <%= f.text_area :introduction %>
+    
+    <%= f.submit 'edit' %>
+  <% end %>
+  
+  <h1>New book</h1>
+
+  <%= form_with model: @book do |f| %>
+    
+    <h4>title</h4>
+      <%= f.text_field :title %>
+    
+    <h4>opinion</h4>
+      <%= f.text_area :body %>
+      
+    <%= f.submit 'Create Book' %>
+  
+  <% end %>
+  
+  <% @books.each do |book| %>
+    <div>
+      <span><%= book.title %></span>
+      <span><%= book.body %></span>
+    </div>
+  <% end %>
+  
+  <h1>Book detail</h1>
+    <p>投稿者の画像</p>
+    <p>名前,ユーザーの詳細ページ（サインインと同じ）</p>
+    <p>タイトル</p>
+    <p>内容</p>
+    
+    <p>編集ボタン</p>
+    <p>削除ボタン</p>
+    
