@@ -11,11 +11,21 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @books = @user.books
   end
 
   def edit
+    @user = current_user
+  end
+  
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render :edit
+    end
   end
   
   private

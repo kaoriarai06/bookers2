@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :books
   get 'homes/about' => 'homes#about', as: 'about'
   post 'users' => 'users#create'
-  resources :users, only: [:show, :index, :edit]
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
