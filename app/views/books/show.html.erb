@@ -27,18 +27,12 @@
   
   <% end %>
   
-  <% @books.each do |book| %>
-    <div>
-      <span><%= book.title %></span>
-      <span><%= book.body %></span>
-    </div>
-  <% end %>
   
   <h1>Book detail</h1>
-    <p>投稿者の画像</p>
-    <p>名前,ユーザーの詳細ページ（サインインと同じ）</p>
-    <p>タイトル</p>
-    <p>内容</p>
+    <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
+    <p><%= @book.title %></p>
+    <p><%= @book.body %></p>
+    
     
     <p>編集ボタン</p>
     <p>削除ボタン</p>

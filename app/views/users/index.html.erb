@@ -1,7 +1,13 @@
 <h1>users/indexページ</h1>
 
 <h1>User info</h1>
-
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <h4>name</h4>
+    <%= @user.name %>
+  <h4>introduction</h4>
+    <%= @user.introduction %>
+  
+  <%= button_to "edit", edit_user_path(current_user.id), method: :get %>
 
   
 <h1>New book</h1>
@@ -23,7 +29,7 @@
   
   <p><%= user.name %></p>
   
-  <%= link_to "show", user_path(user) %>
+  <%= link_to "show", user_path(user.id) %>
 
 <% end %>
   
