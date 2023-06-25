@@ -34,6 +34,7 @@
     <p><%= @book.body %></p>
     
     
-    <p>編集ボタン</p>
+    <%= button_to 'Edit', edit_book_path(@book.id) %>
     <p>削除ボタン</p>
+    
     
